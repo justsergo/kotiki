@@ -1,5 +1,4 @@
 import React from 'react';
-import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,8 +8,13 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import GlobalStack from './navigate';
+import {Main} from './components/main';
 
 
 
-
-export default App;
+export default function App() {
+  return (
+    <Main/>
+  )
+};

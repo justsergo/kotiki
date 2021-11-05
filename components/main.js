@@ -1,16 +1,38 @@
 import React from 'react';
-import type {Node} from 'react';
 import {
-  SafeAreaView,
   ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
-  useColorScheme,
+  Image,
   View,
+  FlatList,
+  TouchableWithoutFeedback,
+  TouchableHighlightBase,
 } from 'react-native';
 
+import {Items} from './catsItem'
 
 
-
-export default App;
+export const Main = ({ navigation }) => {
+    return (
+        <ScrollView>
+            <Text>Представляю вам подборку котов</Text>
+            <FlatList data = {Items} renderItem={({item}) => (
+                <TouchableHighlightBase /*onPress={()=> navigation.navigate('Detail', item)}*/>
+                    <View>
+                    <Text>{ item.name}</Text>
+                    <Text>{ item.tittle}</Text>
+                    </View>
+                    <Image source = {{
+                        width: '100%',
+                        height: 100,
+                        uri: item.img
+                    }}
+                    />
+                    <Text>{ item.description}</Text>
+                </TouchableHighlightBase>
+            )}
+            />
+        </ScrollView>
+    )
+};
+ 
