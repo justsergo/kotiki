@@ -1,28 +1,45 @@
 import React from 'react';
 import {
-  ScrollView,
-  StyleSheet,
   Text,
+  Image,
   View,
+  FlatList,
+  SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
 
-export default function Details ({route}) {
+import {gStyle} from '../styles/style';
+import {DetailPage} from '../styles/style';
+import {Items} from './catsItem';
+
+export const  Details = ({route}) => {
     return (
-        <ScrollView>
-            <Image source = {{
-                        width: '100%',
-                        height: 100,
-                        uri: route.item.img
-                    }}
-            />
-            <View>
-                <Text>Порода:{route.item.fullDescription.breed}</Text>
-                <Text>Возраст:{route.item.fullDescription.age}</Text>
-                <Text>Описание:{route.item.fullDescription.info}</Text>
-            </View>
-            <View>
-                <Text>Рандомный факт:{route.item.randomFact}</Text>
-            </View>
-        </ScrollView>
+        <SafeAreaView>
+            <View style={gStyle.global}>           
+                <Text style={MainPage.title}>Представляю вам подборку котов</Text>
+                <FlatList data = {Items} renderItem={({item}) => (
+                    <TouchableOpacity /*onPress={()=> navigation.navigate('Detail', item)}*/>
+                        <View style={gStyle.container}>                            
+                            <Image 
+                                source = {{
+                                    uri: item.img
+                                }}
+                                style={DetailPage.img}
+                            />
+                            <View >
+                                <Text>Порода:{item.fullDescription.breed}</Text>
+                                <Text>Возраст:{item.fullDescription.age}</Text>
+                                <Text>Описание:{item.fullDescription.info}</Text>
+                            </View>
+                            <View>
+                                <Text>Рандомный факт:{item.randomFact}</Text>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+                )}
+                />
+            </View>    
+        </SafeAreaView>
     )
-}
+};
+ 

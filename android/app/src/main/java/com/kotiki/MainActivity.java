@@ -1,8 +1,12 @@
+// import android.os.Bundle;
+
 package com.kotiki;
 
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
+
+  
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -12,4 +16,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "kotiki";
   }
+
+  // @Override
+  // protected void onCreate(Bundle savedInstanceState) {
+  // super.onCreate(null);
+  // }
+  
 }
