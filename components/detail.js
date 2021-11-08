@@ -5,40 +5,44 @@ import {
   View,
   FlatList,
   SafeAreaView,
-  TouchableOpacity,
+  ScrollView
 } from 'react-native';
 
 import {gStyle} from '../styles/style';
 import {DetailPage} from '../styles/style';
-import {Items} from './catsItem';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 export const  Details = ({route}) => {
     return (
-        <SafeAreaView>
-            <View style={gStyle.global}>           
-                <Text style={MainPage.title}>Представляю вам подборку котов</Text>
-                <FlatList data = {Items} renderItem={({item}) => (
-                    <TouchableOpacity /*onPress={()=> navigation.navigate('Detail', item)}*/>
-                        <View style={gStyle.container}>                            
-                            <Image 
-                                source = {{
-                                    uri: item.img
-                                }}
-                                style={DetailPage.img}
-                            />
-                            <View >
-                                <Text>Порода:{item.fullDescription.breed}</Text>
-                                <Text>Возраст:{item.fullDescription.age}</Text>
-                                <Text>Описание:{item.fullDescription.info}</Text>
-                            </View>
-                            <View>
-                                <Text>Рандомный факт:{item.randomFact}</Text>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                )}
-                />
-            </View>    
+        <SafeAreaView>                    
+                <LinearGradient colors={DetailPage.linearGradient.colors} style={DetailPage.linearGradient}> 
+                <ScrollView>                         
+                    <Image 
+                        source = {{
+                            uri: route.params.img
+                        }}
+
+                        style={DetailPage.img}
+                    />
+                    <View style={DetailPage.border}></View>
+                    <View style={DetailPage.text.space}>
+                        <Text style={DetailPage.text.bold}>Порода:</Text>
+                        <Text style={DetailPage.text.description}>{route.params.fullDescription.breed}</Text>
+                    </View>
+                    <View style={DetailPage.text.space}>
+                        <Text style={DetailPage.text.bold}>Возраст:</Text>
+                        <Text style={DetailPage.text.description}>{route.params.fullDescription.age}</Text>
+                    </View>
+                    <View style={DetailPage.text.space}>
+                        <Text style={DetailPage.text.bold}>Описание:</Text>
+                        <Text style={DetailPage.text.description}>{route.params.fullDescription.info}</Text>
+                    </View>
+                    <View style={DetailPage.border}></View> 
+                    <Text style={DetailPage.text.factText}>Рандомный факт:</Text>
+                    <Text>{route.params.randomFact}</Text> 
+                    </ScrollView>                                      
+                </LinearGradient>              
         </SafeAreaView>
     )
 };

@@ -1,15 +1,11 @@
-import React from 'react';
 import {
   StyleSheet,
-  View,
 } from 'react-native';
 
 export const gStyle = StyleSheet.create ({
     global: {
-        display:'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: '#413d4c',
+        display:'flex',   
+        alignItems: 'center'
     },
 
     container: {
@@ -20,7 +16,7 @@ export const gStyle = StyleSheet.create ({
         borderWidth: 3,
         borderRadius: 8,
         marginTop: 20,
-        backgroundColor: '#f09ca4',
+        backgroundColor: '#dedca6d1',
     },
 
    
@@ -31,7 +27,7 @@ export const MainPage = StyleSheet.create ({
     
     img: {
         width: '100%',
-        height: 130,
+        height: 190,
     },
 
     text: {
@@ -41,6 +37,9 @@ export const MainPage = StyleSheet.create ({
         borderBottomColor:'#404040',
         borderBottomWidth: 1,
         padding: 10,
+        name: {            
+            fontWeight: 'bold',
+        }
     },
 
     description: {
@@ -48,14 +47,27 @@ export const MainPage = StyleSheet.create ({
     },
 
     title: {
-        marginTop: 10
+        color: '#fffdd5eb',
+        fontSize: 18,
+        fontWeight: '400',
+        textAlign: 'center',
+    },
+
+    linearGradient: {
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 5,
+        colors: ['#22bac3',  '#e6ae14'],
     }
+    
 })
 
 export const DetailPage = StyleSheet.create ({
      img: {
         width: '100%',
-        height: 200,
+        height: 300,
+        marginTop: 20,
+        borderRadius: 20,
     },
 
     text: {
@@ -65,6 +77,24 @@ export const DetailPage = StyleSheet.create ({
         borderBottomColor:'#404040',
         borderBottomWidth: 1,
         padding: 10,
+        space: {
+            marginTop: 15
+        },
+        description: {
+            marginTop: 5
+        },
+        bold: {
+            color: '#fffdd5eb',
+            fontSize: 17,
+            fontWeight: '400'
+        },
+        factText: {
+            color: '#fffdd5eb',
+            fontSize: 18,
+            fontWeight: '400',
+            textAlign: 'center',
+            marginBottom: 15
+        }
     },
 
     description: {
@@ -73,6 +103,20 @@ export const DetailPage = StyleSheet.create ({
 
     title: {
         marginTop: 10
+    },
+
+    border: {
+        marginTop: 15,
+        marginBottom: 15,
+        borderBottomWidth: 1,
+        alignItems: 'center'
+    },
+
+    linearGradient: {
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 5,
+        colors: ['#409dde',  '#d5e7b3'],
     }
 })
 
