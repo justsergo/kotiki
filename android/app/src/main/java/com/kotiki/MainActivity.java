@@ -1,4 +1,4 @@
-// import android.os.Bundle;
+import android.os.Bundle;
 
 package com.kotiki;
 
@@ -17,9 +17,9 @@ public class MainActivity extends ReactActivity {
     return "kotiki";
   }
 
-  // @Override
-  // protected void onCreate(Bundle savedInstanceState) {
-  // super.onCreate(null);
-  // }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+  }
   
 }
