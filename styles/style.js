@@ -6,6 +6,10 @@ export const gStyle = StyleSheet.create({
     alignItems: 'center',
   },
 
+  safeArea: {
+    flex: 1,
+  },
+
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -48,6 +52,7 @@ export const MainPage = StyleSheet.create({
   },
 
   linearGradient: {
+    flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
     colors: ['#22bac3', '#e6ae14'],
@@ -105,6 +110,7 @@ export const DetailPage = StyleSheet.create({
   },
 
   linearGradient: {
+    flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,

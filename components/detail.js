@@ -7,7 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export const Details = ({route}) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={gStyle.safeArea}>
       <LinearGradient
         colors={DetailPage.linearGradient.colors}
         style={DetailPage.linearGradient}>
